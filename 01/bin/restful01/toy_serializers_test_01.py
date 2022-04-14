@@ -26,14 +26,20 @@ serializer_for_toy1 = ToySerializer(toy1)
 print(serializer_for_toy1.data) 
 
 {
-    'pk': 1, 
-    'name': 'Snoopy talking action figure', 
-    'description': 'Snoopy speaks five languages', 
-    'release_date': '2017-10-09T12:11:37.090335Z', 
-    'toy_category': 'Action figures', 
-    'was_included_in_home': False
+    "pk": 2, 
+    "name": "Snoopy talking action figure", 
+    "description": "Snoopy speaks five language", 
+    "release_date": "2017-10-09T12:11:37.090335Z", 
+    "toy_category": "Action figures", 
+    "was_included_in_home": False
 }
+"""
+curl -X POST 127.0.0.1:8000/toys/toys/ -H 'Content-Type: application/json' -d {"pk": 2,"name": "Snoopy talking action figure","description": "Snoopy speaks five language","release_date": "2017-10-09T12:11:37.090335Z","toy_category": "Action figures", "was_included_in_home": False}'
 
+{
+
+curl -X POST 127.0.0.1:8000/toys/toys/ -H 'Content-Type: application/json' -d '{"pk": 2,"name": "Hawaiian Barbie","description": "Barbie loves Hawaii","release_date": "2017-10-09T12:11:37.090335Z","toy_category": "Dolls", "was_included_in_home": true}'
+"""
 serializer_for_toy2 = ToySerializer(toy2) 
 print(serializer_for_toy2.data)
 
